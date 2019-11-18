@@ -16,7 +16,4 @@ dateDeleted (dateTime)
 dateCreated (dateTime)
 dateModified (datetime)
 creatorId  (id)
-ownerId   (id)
-note    (Text)
-
 
