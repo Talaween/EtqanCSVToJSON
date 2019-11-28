@@ -1,4 +1,3 @@
-sep=;
 Table;Action;Records;Fields
 Activity;read;$resource.creatorId=$user.id;id,dateCreated, hidden, targetId, typeId, targetTableId
 ;read;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.leaderId = $user.Id AND PupilGroup.pupilId = $resourceId ;id,dateCreated, hidden, targetId, typeId, targetTableId
@@ -22,7 +21,6 @@ AppRating;read;any;*
 ;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
 ;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
 ;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
-;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
 AppComment;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
 ;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
 ;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
