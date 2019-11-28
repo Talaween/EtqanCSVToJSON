@@ -1,0 +1,169 @@
+Table;Action;Records;Fields
+Activity;read;$resource.creatorId=$user.id;id,dateCreated, hidden, targetId, typeId, targetTableId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;id,dateCreated, hidden, targetId, typeId, targetTableId
+;read;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;id,dateCreated, hidden, targetId, typeId, targetTableId
+;read;$resource.creatorId!=$user.id;id,dateCreated, targetId, typeId, targetTableId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+ActivityTargetTable;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+ActivityType;read;$resource.creatorId=$user.id;
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+App;read;any;*, !pathToConfig
+;create;any;*
+;update;$resource.creatorId=$user.id;*, !pathToConfig
+;delete;$resource.creatorId=$user.id;*, !pathToConfig
+AppRating;read;any;*
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+AppComment;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+FavouriteApp;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+Award;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*
+;update;$resource.creatorId=$user.id;title,pathToImage
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+ProfileAward;read;$resource.creatorId=$user.id;*
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+Login;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;*;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+PasswordHint;read;none;
+;create;$resource.creatorId=$user.id;hint,secretQuestion1,secretQuestion2
+;update;none;
+;delete;$resource.creatorId=$user.id;secretQuestion1Answer,secretQuestion2Answer
+Payment;read;none;
+;create;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+;update;none;
+;delete;none;
+Score;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;$resource.creatorId=$user.id;*,!device, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+Subscription;read;none;
+;create;$resource.creatorId=$user.id;startDate,endDate,payment
+;update;none;
+;delete;none;
+Task;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+PupilTask;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Theme;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+User;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;read;$resource.creatorId!=$user.id;firstName,lastName,email,DoB,gender
+;create;any;*
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*
+;delete;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;SELECT * FROM Group INNER JOIN PupilGroup ON Group.id = PupilGroup.groupId WHERE Group.ownerId = $user.Id AND PupilGroup.pupilId = $resourceId ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+Voucher;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Group;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+PupilGroup;read;$resource.ownerId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.ownerId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.ownerId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+Announcement;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;none;
+;delete;none;
+ForumCategory;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+ForumThread;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+ForumReply;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;update;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;delete;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+Mentor;read;$resource.creatorId=$user.id;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;any;*
+;update;$resource.creatorId=$user.id;*
+;delete;$resource.creatorId=$user.id;*
+Device;read;$resource.creatorId=$user.id;*
+;create;none;
+;update;none;
+;delete;none;
+AppSetting;read;$resource.creatorId=$user.id ;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId, !deleted
+;create;none;
+;update;none;
+;delete;none;
+Country;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Currency;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+DataType;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+DeviceType;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Language;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+OS;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+PaymentMethod;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Translation;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+UserTitle;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
+Gender;read;any;*, !id, !dateDeleted, !createDate, !dateModified, !creatorId
+;create;none;
+;update;none;
+;delete;none;
