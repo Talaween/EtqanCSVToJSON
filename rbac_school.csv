@@ -1,3 +1,4 @@
+sep=;
 Table;Action;Records;Fields
 Activity;read;$resource.creatorId=$user.id;id,dateCreated, hidden, targetId, typeId, targetTableId
 ;read;SELECT * FROM User WHERE User.ownerId = $user.Id  AND User.Id = $resource.creatorId;id,dateCreated, hidden, targetId, typeId, targetTableId
