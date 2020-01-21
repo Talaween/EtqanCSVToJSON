@@ -132,6 +132,8 @@ var admin_role = {role:"Admin", inherits:"", grant:[
         
 var schema = {accesscontrol:[admin_role]};
 
+//load other roles from csv file templates for each roles
+
 fs.writeFile("semsem_rbac.json", JSON.stringify(schema), function(err) {
     if(err) {
         return console.log(err);
